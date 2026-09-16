@@ -2,8 +2,8 @@ import pandas as pd
 from pymongo import MongoClient
 import glob
 import os
-
-MONGODB_URI="mongodb+srv://boubakerelkilani_db_user:0xuDKcxBZxyobpHW@cluster0.mwp48qy.mongodb.net"
+from dotenv import load_dotenv
+MONGODB_URI = os.getenv("MONGODB_URI")
 client = MongoClient(MONGODB_URI)
 client.drop_database("OLIST")
 db = client["OLIST"]
